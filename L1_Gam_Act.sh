@@ -1,22 +1,25 @@
 #!/bin/bash
 
-task=GAMBLING
-run=$1
-subj=$2
-
 BASEDIR=`pwd`
 cd ..
 MAINDATADIR=`pwd`/Data
-MAINOUTPUTDIR=`pwd`/output
+MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
-#datadir=mnt/c/Users/tue90350/Desktop/data/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}
+#bash L1_Gam_Act.sh $subj $task $run
+subj=$1
+task=$2
+run=$3
 
-OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act
+#make paths to reflect lab directory
 DATA=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/smoothing.feat/ICA_AROMA/denoised_func_data_nonaggr.nii.gz
 NVOLUMES=`fslnvols ${DATA}`
-#DATA=${datadir}/smoothing.feat/ICA_AROMA/denoised_func_data_nonaggr.nii.gz
-rm -rf ${OUTPUT}.feat
+OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act
+
+#remove output files if they exist to avoid +.feat directories
+if [ -e ${OUTPUT}.feat ]; then
+  rm -rf ${OUTPUT}.feat
+fi
 
 #EV files
 EVLOSS=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/loss.txt
@@ -32,6 +35,7 @@ sed -e 's@OUTPUT@'$OUTPUT'@g' \
 -e 's@EVWIN@'$EVWIN'@g' \
 <$ITEMPLATE> $OTEMPLATE
 
+#runs feat on output template
 feat $OTEMPLATE
 
 #delete unused files
