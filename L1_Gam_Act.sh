@@ -25,7 +25,7 @@ fi
 EVLOSS=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/loss.txt
 EVWIN=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/win.txt
 
-#find and replace: temporal filtering, no brain extraction,
+#find and replace: temporal filtering, no brain extraction; have to make input template first!
 ITEMPLATE=${BASEDIR}/templates/L1GamAct.fsf
 OTEMPLATE=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act.fsf
 sed -e 's@OUTPUT@'$OUTPUT'@g' \
