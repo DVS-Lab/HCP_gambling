@@ -1,23 +1,27 @@
 #!/bin/bash
 
+task=GAMBLING
+run=$1
+subj=$2
+
 BASEDIR=`pwd`
 cd ..
 MAINDATADIR=`pwd`/Data
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
-#bash L1_Gam_Act.sh $subj $task $run
-subj=$1
-task=$2
-run=$3
-
 #make paths to reflect lab directory
+OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act
 DATA=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/smoothing.feat/ICA_AROMA/denoised_func_data_nonaggr.nii.gz
 NVOLUMES=`fslnvols ${DATA}`
-OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act
 
-#remove output files if they exist to avoid +.feat directories
-if [ -e ${OUTPUT}.feat ]; then
+#checking L1 Act output
+#comment out sanity check when running full dataset
+#SANITY CHECK
+if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
+  echo "L1_Gam_Act has been run for $subj"
+  exit
+else
   rm -rf ${OUTPUT}.feat
 fi
 
@@ -39,7 +43,7 @@ sed -e 's@OUTPUT@'$OUTPUT'@g' \
 feat $OTEMPLATE
 
 #delete unused files
-#rm -rf ${OUTPUT}.feat/filtered_func_data.nii.gz, correct for time series
+#not deleting filtered_func_data bc that's input for PPI
 rm -rf ${OUTPUT}.feat/stats/res4d.nii.gz
 rm -rf ${OUTPUT}.feat/stats/corrections.nii.gz
 rm -rf ${OUTPUT}.feat/stats/threshac1.nii.gz

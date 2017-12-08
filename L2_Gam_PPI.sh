@@ -6,15 +6,22 @@ MAINDATADIR=`pwd`/Data
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
-##bash L2_Gam_PPI.sh $subj $task $run
+##bash L2_Gam_PPI.sh $subj
 subj=$1
 
 INPUT01=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_PPI.feat
 INPUT02=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_GAMBLING_RL/L1_Gam_PPI.feat
 OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Gam_PPI
 
+#check L2 output
 #remove output files if they exist to avoid +.gfeat directories; g signifies higher level
-if [ -e ${OUTPUT}.gfeat ]; then
+#remove sanity check when running full dataset
+#SANITY CHECK
+NCOPES=7 #check last cope since they are done sequentially
+if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then
+  echo "L2_Gam_PPI has been run for $subj"
+  exit
+else
   rm -rf ${OUTPUT}.gfeat
 fi
 
@@ -36,3 +43,9 @@ sed -e 's@OUTPUT@'$OUTPUT'@g' \
 
 #runs feat on output template
 feat $OTEMPLATE
+
+#remove files we won't be using
+for C in `seq $NCOPES`; do
+  rm -rf ${OUTPUT}.gfeat/cope${C}.feat/filtered_func_data.nii.gz
+  rm -rf ${OUTPUT}.gfeat/cope${C}.feat/var_filtered_func_data.nii.gz
+done
