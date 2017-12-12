@@ -16,7 +16,7 @@ for subj in `cat sublist.txt`; do
       sleep 1m
     done
     bash runAROMA.sh $run $subj &
-    echo "finished running for $run $subj"
+    echo "running $run $subj"
     sleep 1
   done
 done
