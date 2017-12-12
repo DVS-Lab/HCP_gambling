@@ -25,5 +25,5 @@ done
     #while [ $(ps -ef | grep -v grep | grep L2_Soc_nPPI.sh | wc -l) -ge $NCORES ]; do
         #sleep 1m
     #done
-    #bash L2_Soc_nPPI.sh $subj &
+    #bash L2_Gam_nPPI.sh $subj &
 #done
