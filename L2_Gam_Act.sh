@@ -2,7 +2,6 @@
 
 BASEDIR=`pwd`
 cd ..
-MAINDATADIR=`pwd`/Data
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
@@ -20,7 +19,7 @@ OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Gam_Act
 #SANITY CHECK
 NCOPES=2
 if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then
-  echo "L2_Gam_Act has been run for $subj"
+  #echo "L2_Gam_Act has been run for $subj"
   exit
 else
   rm -rf ${OUTPUT}.gfeat
