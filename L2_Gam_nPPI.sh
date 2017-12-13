@@ -20,7 +20,7 @@ for NET in DMN ECN; do
   #SANITY CHECK
   NCOPES=7 #check last cope since they are done sequentially
   if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then
-    echo "L2_Gam_nPPI has been run for $subj $NET"
+    #echo "L2_Gam_nPPI has been run for $subj $NET"
     exit
   else
     rm -rf ${OUTPUT}.gfeat
