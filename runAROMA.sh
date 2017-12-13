@@ -20,7 +20,7 @@ OUTPUT=${OUTPUTDIR}/smoothing
 #check AROMA output, comment out sanity check before running full dataset
 #SANITY CHECK to avoid redoing
 if [ -e ${OUTPUT}.feat/ICA_AROMA/denoised_func_data_nonaggr.nii.gz ]; then
-  #echo "runAROMA has been run"
+  echo "runAROMA has been run for $run $subj"
   exit
 else
   #echo "re-running $subj on run $run"
