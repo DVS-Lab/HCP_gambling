@@ -20,7 +20,7 @@ for RSNmap in DMN ECN; do
   #comment out sanity check when running full dataset
   #SANITY CHECK
   if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-    #echo "L1_Gam_nPPI has been run for $subj $run $RSNmap"
+    echo "L1_Gam_nPPI has been run for $subj $run $RSNmap"
     exit
   else
     rm -rf ${OUTPUT}.feat
