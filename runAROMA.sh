@@ -1,16 +1,14 @@
 #!/bin/bash
 
+task=GAMBLING
+run=$1
+subj=$2
+
 BASEDIR=`pwd`
 cd ..
 MAINDATADIR=/s3/hcp
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
-
-#bash runAROMA.sh $subj $run
-#insert task when testing without wrapper
-task=$1
-run=$2
-subj=$3
 
 #make paths to reflect lab directory
 DATADIR=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}
