@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NCORES=28
+NCORES=30
 
 #L1_Gam_Act $subj $run
 for subj in `cat sublist`; do
