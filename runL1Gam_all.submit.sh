@@ -7,7 +7,7 @@ for subj in `cat sublist.txt`; do
   for run in LR RL; do
     #manages number of processes compared to NCORES
     while [ $(ps -ef | grep -v grep | grep L1_Gam_Act.sh | wc -l) -ge $NCORES ]; do
-      sleep 1m
+       sleep 1m
     done
     bash L1_Gam_Act.sh $run $subj &
   done
@@ -18,7 +18,7 @@ for subj in `cat sublist.txt`; do
   for run in LR RL; do
     #manages number of processes compared to NCORES
     while [ $(ps -ef | grep -v grep | grep L1_Gam_PPI.sh | wc -l) -ge $NCORES ]; do
-      sleep 1m
+       sleep 1m
     done
     bash L1_Gam_PPI.sh $run $subj &
   done
@@ -29,7 +29,7 @@ for subj in `cat sublist.txt`; do
   for run in RL LR; do
     #Manages the number of jobs and cores
     while [ $(ps -ef | grep -v grep | grep L1_Gam_nPPI.sh | wc -l) -ge $NCORES ]; do
-      sleep 1m
+       sleep 1m
     done
     bash L1_Gam_nPPI.sh $run $subj &
   done
