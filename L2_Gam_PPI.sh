@@ -19,7 +19,7 @@ OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Gam_PPI
 #SANITY CHECK
 NCOPES=7 #check last cope since they are done sequentially
 if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then
-  echo "L2_Gam_PPI has been run for $subj"
+  #echo "L2_Gam_PPI has been run for $subj"
   exit
 else
   rm -rf ${OUTPUT}.gfeat
