@@ -2,7 +2,7 @@
 
 BASEDIR=`pwd`
 cd ..
-MAINDATADIR=`pwd`/s3/hcp
+MAINDATADIR=/s3/hcp
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
