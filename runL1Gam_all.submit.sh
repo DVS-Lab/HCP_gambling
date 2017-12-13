@@ -1,6 +1,4 @@
 #!/bin/bash
-
-#L1_Gam_Act $subj $run
 for subj in `cat sublist.txt`; do
   for run in LR RL; do
     #manages number of processes compared to NCORES
