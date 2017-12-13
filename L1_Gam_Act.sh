@@ -19,7 +19,7 @@ NVOLUMES=`fslnvols ${DATA}`
 #comment out sanity check when running full dataset
 #SANITY CHECK
 if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-  echo "L1_Gam_Act has been run for $subj"
+  #echo "L1_Gam_Act has been run for $subj"
   exit
 else
   rm -rf ${OUTPUT}.feat
