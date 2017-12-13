@@ -1,11 +1,11 @@
 #!/bin/bash
 
 task=GAMBLING
-NCORES=28
+NCORES=30
 
 BASEDIR=`pwd`
 cd ..
-MAINDATADIR=`pwd`/Data
+MAINDATADIR=/s3/hcp
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
@@ -16,7 +16,7 @@ for subj in `cat sublist.txt`; do
       sleep 1m
     done
     bash runAROMA.sh $run $subj &
-    echo "running $run $subj"
+    #echo "running $run $subj"
     sleep 1
   done
 done
