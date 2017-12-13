@@ -3,7 +3,7 @@
 NCORES=30
 
 #L1_Gam_Act $subj $run
-for subj in `cat sublist`; do
+for subj in `cat sublist.txt`; do
   for run in LR RL; do
     #manages number of processes compared to NCORES
     while [ $(ps -ef | grep -v grep | grep L1_Gam_Act.sh | wc -l) -ge $NCORES ]; do
@@ -14,7 +14,7 @@ for subj in `cat sublist`; do
 done
 
 #L1_Gam_PPI $subj $run
-for subj in `cat sublist`; do
+for subj in `cat sublist.txt`; do
   for run in LR RL; do
     #manages number of processes compared to NCORES
     while [ $(ps -ef | grep -v grep | grep L1_Gam_PPI.sh | wc -l) -ge $NCORES ]; do
@@ -25,7 +25,7 @@ for subj in `cat sublist`; do
 done
 
 #L1_Gam_nPPI $subj $run
-for subj in `cat sublist`; do
+for subj in `cat sublist.txt`; do
   for run in RL LR; do
     #Manages the number of jobs and cores
     while [ $(ps -ef | grep -v grep | grep L1_Gam_nPPI.sh | wc -l) -ge $NCORES ]; do
