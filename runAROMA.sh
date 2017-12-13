@@ -2,15 +2,15 @@
 
 BASEDIR=`pwd`
 cd ..
-MAINDATADIR=`pwd`/Data
+MAINDATADIR=`pwd`/s3/hcp
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
 #bash runAROMA.sh $subj $run
 #insert task when testing without wrapper
-task=GAMBLING
-run=$1
-subj=$2
+task=$1
+run=$2
+subj=$3
 
 #make paths to reflect lab directory
 DATADIR=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}
@@ -22,7 +22,7 @@ OUTPUT=${OUTPUTDIR}/smoothing
 #check AROMA output, comment out sanity check before running full dataset
 #SANITY CHECK to avoid redoing
 if [ -e ${OUTPUT}.feat/ICA_AROMA/denoised_func_data_nonaggr.nii.gz ]; then
-  echo "runAROMA has been run"
+  #echo "runAROMA has been run"
   exit
 else
   #echo "re-running $subj on run $run"
