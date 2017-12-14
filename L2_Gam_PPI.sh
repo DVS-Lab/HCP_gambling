@@ -2,7 +2,6 @@
 
 BASEDIR=`pwd`
 cd ..
-MAINDATADIR=`pwd`/Data
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
