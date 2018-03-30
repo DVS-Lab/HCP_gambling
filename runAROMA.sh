@@ -6,7 +6,7 @@ subj=$2
 
 BASEDIR=`pwd`
 cd ..
-MAINDATADIR=/s3/HCP_1200
+MAINDATADIR=/s3/hcp
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
