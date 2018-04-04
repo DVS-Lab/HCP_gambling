@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #L1_Gam_Act $subj $run
-for subj in `cat sublist.txt`; do
+for subj in `cat sublist149`; do
   for run in LR RL; do
     #manages number of processes compared to NCORES
-    NCORES=30
+    NCORES=20
     while [ $(ps -ef | grep -v grep | grep L1_Gam_Act.sh | wc -l) -ge $NCORES ]; do
        sleep 1m
     done
@@ -13,10 +13,10 @@ for subj in `cat sublist.txt`; do
 done
 
 #L1_Gam_PPI $subj $run
-for subj in `cat sublist.txt`; do
+for subj in `cat sublist149`; do
   for run in LR RL; do
     #manages number of processes compared to NCORES
-    NCORES=30
+    NCORES=20
     while [ $(ps -ef | grep -v grep | grep L1_Gam_PPI.sh | wc -l) -ge $NCORES ]; do
        sleep 1m
     done

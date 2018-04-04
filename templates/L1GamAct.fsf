@@ -21,7 +21,7 @@ set fmri(analysis) 7
 set fmri(relative_yn) 0
 
 # Balloon help
-set fmri(help_yn) 1
+set fmri(help_yn) 0
 
 # Run Featwatcher
 set fmri(featwatcher_yn) 0
