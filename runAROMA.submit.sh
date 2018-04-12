@@ -6,10 +6,10 @@ MAINDATADIR=/s3/hcp
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
-for subj in `cat sublist149`; do
+for subj in `cat sublist191.txt`; do
   for run in LR RL; do
     #manage number of processes vs NCORES
-    NCORES=20
+    NCORES=28
     while [ $(ps -ef | grep -v grep | grep runAROMA.sh | wc -l) -ge $NCORES ]; do
       sleep 1m
     done

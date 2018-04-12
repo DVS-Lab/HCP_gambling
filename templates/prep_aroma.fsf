@@ -106,7 +106,7 @@ set fmri(st_file) ""
 set fmri(bet_yn) 0
 
 # Spatial smoothing FWHM (mm)
-set fmri(smooth) 0.0
+set fmri(smooth) 4.0
 
 # Intensity normalization
 set fmri(norm_yn) 0
@@ -121,7 +121,7 @@ set fmri(temphp_yn) 0
 set fmri(templp_yn) 0
 
 # MELODIC ICA data exploration
-set fmri(melodic_yn) 1
+set fmri(melodic_yn) 0
 
 # Carry out main stats?
 set fmri(stats_yn) 0
@@ -257,7 +257,7 @@ set fmri(regstandard_nonlinear_yn) 0
 set fmri(regstandard_nonlinear_warpres) 10
 
 # High pass filter cutoff
-set fmri(paradigm_hp) 100
+set fmri(paradigm_hp) 200
 
 # Total voxels
 set fmri(totalVoxels) 158862704
