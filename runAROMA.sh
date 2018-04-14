@@ -55,7 +55,7 @@ myoutput=${OUTPUT}.feat/ICA_AROMA
 mcfile=${OUTPUTDIR}/motion_6col.txt
 rawmotion=${DATADIR}/Movement_Regressors.txt
 
-deleting any preexisting files
+#deleting any preexisting files
 rm -rf $myoutput
 
 #run python
@@ -63,4 +63,4 @@ python splitmotion.py $rawmotion $mcfile
 
 #running AROMA
 #add -m flag that uses mask.nii.gz from bet output
-python ${BASEDIR}/ICA-AROMA-master/ICA_AROMA_Nonormalizing.py -in $myinput -out $myoutput -mc $mcfile -m ${aromamask}_mask
+python ${BASEDIR}/ICA-AROMA-master/ICA_AROMA_Nonormalizing.py -in $myinput -out $myoutput -mc $mcfile -m ${aromamask}_mask.nii.gz
