@@ -42,19 +42,25 @@ sed -e 's@OUTPUT@'$OUTPUT'@g' \
 #runs feat
 feat ${OTEMPLATE}
 
+#set input and output for bet
+inputmask=${OUTPUT}.feat/mean_func.nii.gz
+aromamask=${OUTPUT}.feat/betmask
+
+#run bet to create mask instead of using default feat output
+bet inputmask aromamask -f 0.3 -n -m -R
+
 #create variables for ICA AROMA (splitmotion)
 myinput=${OUTPUT}.feat/filtered_func_data.nii.gz
 myoutput=${OUTPUT}.feat/ICA_AROMA
 mcfile=${OUTPUTDIR}/motion_6col.txt
 rawmotion=${DATADIR}/Movement_Regressors.txt
-#add directory for bet output input files here
 
-#deleting any preexisting files
+deleting any preexisting files
 rm -rf $myoutput
 
 #run python
-python splitmotion.py $rawmotion $mcfile
+#python splitmotion.py $rawmotion $mcfile
 
 #running AROMA
 #add -m flag that uses mask.nii.gz from bet output
-python ${BASEDIR}/ICA-AROMA-master/ICA_AROMA_Nonormalizing.py -in $myinput -out $myoutput -mc $mcfile
+python ${BASEDIR}/ICA-AROMA-master/ICA_AROMA_Nonormalizing.py -in $myinput -out $myoutput -mc $mcfile -m $aromamask
