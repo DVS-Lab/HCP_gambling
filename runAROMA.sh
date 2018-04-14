@@ -59,7 +59,7 @@ deleting any preexisting files
 rm -rf $myoutput
 
 #run python
-#python splitmotion.py $rawmotion $mcfile
+python splitmotion.py $rawmotion $mcfile
 
 #running AROMA
 #add -m flag that uses mask.nii.gz from bet output
