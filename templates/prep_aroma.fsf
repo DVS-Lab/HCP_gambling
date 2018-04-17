@@ -301,7 +301,7 @@ set fmri(convolve_phase1) 0
 set fmri(tempfilt_yn1) 1
 
 # Add temporal derivative (EV 1)
-set fmri(deriv_yn1) 1
+set fmri(deriv_yn1) 0
 
 # Skip (EV 1)
 set fmri(skip1) 0

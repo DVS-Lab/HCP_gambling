@@ -18,12 +18,12 @@ NVOLUMES=`fslnvols ${DATA}`
 #checking L1 Act output
 #comment out sanity check when running full dataset
 #SANITY CHECK
-if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-  echo "L1_Gam_Act has been run for $run $subj"
-  exit
-else
-  rm -rf ${OUTPUT}.feat
-fi
+#if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
+  #echo "L1_Gam_Act has been run for $run $subj"
+  #exit
+#else
+  #rm -rf ${OUTPUT}.feat
+#fi
 
 #EV files
 EVLOSS=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/loss.txt
