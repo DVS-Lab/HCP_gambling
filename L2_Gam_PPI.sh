@@ -17,12 +17,12 @@ OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Gam_PPI
 #remove sanity check when running full dataset
 #SANITY CHECK
 NCOPES=7 #check last cope since they are done sequentially
-if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then
+#if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/#cluster_mask_zstat1.nii.gz ]; then
   #echo "L2_Gam_PPI has been run for $subj"
-  exit
-else
-  rm -rf ${OUTPUT}.gfeat
-fi
+  #exit
+#else
+  #rm -rf ${OUTPUT}.gfeat
+#fi
 
 for run in LR RL; do
   rm -rf ${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_GAMBLING_${run}/L1_Gam_PPI.feat/reg
