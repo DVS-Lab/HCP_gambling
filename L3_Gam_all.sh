@@ -17,18 +17,18 @@ OUTPUT=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}
 #check L3 output; avoid running analyses twice/overwriting
 #remove sanity check when running full dataset
 #SANITY CHECK WILL ONLY SHOW SCRIPT WORKS IF THE OUTPUT FOLDER DOES NOT ALREADY EXIST
-if [ -e ${OUTPUT}.gfeat/cope1.feat/cluster_mask_zstat1.nii.gz ]; then
-  echo "L3_Gam has been run for $TYPE $COPENUM"
-  exit
-else
-  rm -rf ${OUTPUT}.gfeat
-fi
+#if [ -e ${OUTPUT}.gfeat/cope1.feat/cluster_mask_zstat1.nii.gz ]; then
+  #echo "L3_Gam has been run for $TYPE $COPENUM"
+  #exit
+#else
+  #rm -rf ${OUTPUT}.gfeat
+#fi
 
 #find and replace
 #input template L3Gam1 for plain activation
 #input template L3Gam for sad_dep
 #add _sd at the end of fsf file for sad_dep
-ITEMPLATE=${BASEDIR}/templates/L3Gam.fsf
+ITEMPLATE=${BASEDIR}/templates/L3Gamtest.fsf
 OTEMPLATE=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}.fsf
 sed -e 's@OUTPUT@'$OUTPUT'@g' \
 -e 's@TYPE@'$TYPE'@g' \
