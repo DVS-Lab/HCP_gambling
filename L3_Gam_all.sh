@@ -12,7 +12,7 @@ MAINOUTPUTDIR=`pwd`/Analysis/
 cd $BASEDIR
 
 #add _sad at the end of gfeat output for sad_dep
-OUTPUT=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}_sad
+OUTPUT=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}_TEST
 
 #check L3 output; avoid running analyses twice/overwriting
 #remove sanity check when running full dataset
@@ -25,11 +25,11 @@ OUTPUT=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}_sad
 #fi
 
 #find and replace
-#input template L3Gam1 for plain activation
-#input template L3Gam for sad_dep
+#input template L3Gamtest for plain activation
+#input template L3Gamtest_sad for sad_dep
 #add _sad at the end of fsf file for nih sadness score
-ITEMPLATE=${BASEDIR}/templates/L3Gamtest_sad.fsf
-OTEMPLATE=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}_sad.fsf
+ITEMPLATE=${BASEDIR}/templates/L3Gamtest.fsf
+OTEMPLATE=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}_TEST.fsf
 sed -e 's@OUTPUT@'$OUTPUT'@g' \
 -e 's@TYPE@'$TYPE'@g' \
 -e 's@COPENUM@'$COPENUM'@g' \
