@@ -10,7 +10,8 @@ MAINDATADIR=/s3/hcp
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
-for RSNmap in DMN ECN; do
+#replaced RSNmap with 8 mask files from PNAS
+for RSNmap in net0000 net0001 net0002 net0004 net00005 net00006 net00008 net00009; do
 
   OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_nPPI_${RSNmap}
   DATA=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act.feat/filtered_func_data.nii.gz
@@ -31,6 +32,7 @@ for RSNmap in DMN ECN; do
   EVWIN=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/win.txt
 
   #generate mask's timecourse
+  #DMN ECN and 8 new masks
   NET=${BASEDIR}/masks/PNAS_2mm_${RSNmap}.nii.gz
   MASK=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act.feat/mask
   TIMECOURSE=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act.feat/net_${RSNmap}_tc.txt

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-task=GAMBLING
+#testing to begin running EMOTION task
+task=EMOTION
 run=$1
 subj=$2
 
