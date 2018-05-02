@@ -11,7 +11,7 @@ MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
 #replaced RSNmap with 8 mask files from PNAS
-for RSNmap in net0000 net0001 net0002 net0004 net00005 net00006 net00008 net00009; do
+for RSNmap in DMN ECN; do
 
   OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_nPPI_${RSNmap}
   DATA=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act.feat/filtered_func_data.nii.gz

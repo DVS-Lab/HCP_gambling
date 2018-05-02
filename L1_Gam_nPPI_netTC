@@ -1,0 +1,23 @@
+#!/bin/bash
+
+task=GAMBLING
+run=$1
+subj=$2
+
+BASEDIR=`pwd`
+cd ..
+MAINDATADIR=/s3/hcp
+MAINOUTPUTDIR=`pwd`/Analysis
+cd $BASEDIR
+
+#replaced RSNmap with 8 mask files from PNAS
+#generate mask's timecourse 8 masks without DMN ECN
+for RSNmap in net0000 net0001 net0002 net0004 net0005 net0006 net0008 net0009; do
+
+  DATA=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act.feat/filtered_func_data.nii.gz
+  NET=${BASEDIR}/masks/PNAS_2mm_${RSNmap}.nii.gz
+  MASK=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act.feat/mask
+  TIMECOURSE=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act.feat/${RSNmap}_tc.txt
+  fsl_glm -i $DATA -d $NET -o $TIMECOURSE --demean -m $MASK
+
+done
