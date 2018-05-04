@@ -30,7 +30,7 @@ set fmri(featwatcher_yn) 0
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "OUTPUT"
+set fmri(outputdir) "/data/Analysis/Gam_nPPI_netTC"
 
 # TR(s)
 set fmri(tr) 0.720000
@@ -267,7 +267,7 @@ set fmri(totalVoxels) 228365137
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "DATA"
+set feat_files(1) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/filtered_func_data"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
@@ -304,7 +304,7 @@ set fmri(tempfilt_yn1) 0
 set fmri(deriv_yn1) 0
 
 # Custom EV file (EV 1)
-set fmri(custom1) "EVDMN"
+set fmri(custom1) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/net_DMN_tc.txt"
 
 # Orthogonalise EV 1 wrt EV 0
 set fmri(ortho1.0) 0
@@ -383,7 +383,7 @@ set fmri(tempfilt_yn2) 0
 set fmri(deriv_yn2) 0
 
 # Custom EV file (EV 2)
-set fmri(custom2) "EVECN"
+set fmri(custom2) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/net_ECN_tc.txt"
 
 # Orthogonalise EV 2 wrt EV 0
 set fmri(ortho2.0) 0
@@ -462,7 +462,7 @@ set fmri(tempfilt_yn3) 0
 set fmri(deriv_yn3) 0
 
 # Custom EV file (EV 3)
-set fmri(custom3) "EVZERO"
+set fmri(custom3) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/net0000_tc.txt"
 
 # Orthogonalise EV 3 wrt EV 0
 set fmri(ortho3.0) 0
@@ -541,7 +541,7 @@ set fmri(tempfilt_yn4) 0
 set fmri(deriv_yn4) 0
 
 # Custom EV file (EV 4)
-set fmri(custom4) "EVONE"
+set fmri(custom4) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/net0001_tc.txt"
 
 # Orthogonalise EV 4 wrt EV 0
 set fmri(ortho4.0) 0
@@ -620,7 +620,7 @@ set fmri(tempfilt_yn5) 0
 set fmri(deriv_yn5) 0
 
 # Custom EV file (EV 5)
-set fmri(custom5) "EVTWO"
+set fmri(custom5) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/net0002_tc.txt"
 
 # Orthogonalise EV 5 wrt EV 0
 set fmri(ortho5.0) 0
@@ -699,7 +699,7 @@ set fmri(tempfilt_yn6) 0
 set fmri(deriv_yn6) 0
 
 # Custom EV file (EV 6)
-set fmri(custom6) "EVFOUR"
+set fmri(custom6) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/net0004_tc.txt"
 
 # Orthogonalise EV 6 wrt EV 0
 set fmri(ortho6.0) 0
@@ -778,7 +778,7 @@ set fmri(tempfilt_yn7) 0
 set fmri(deriv_yn7) 0
 
 # Custom EV file (EV 7)
-set fmri(custom7) "EVFIVE"
+set fmri(custom7) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/net0005_tc.txt"
 
 # Orthogonalise EV 7 wrt EV 0
 set fmri(ortho7.0) 0
@@ -857,7 +857,7 @@ set fmri(tempfilt_yn8) 0
 set fmri(deriv_yn8) 0
 
 # Custom EV file (EV 8)
-set fmri(custom8) "EVSIX"
+set fmri(custom8) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/net0006_tc.txt"
 
 # Orthogonalise EV 8 wrt EV 0
 set fmri(ortho8.0) 0
@@ -936,7 +936,7 @@ set fmri(tempfilt_yn9) 0
 set fmri(deriv_yn9) 0
 
 # Custom EV file (EV 9)
-set fmri(custom9) "EVEIGHT"
+set fmri(custom9) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/net0008_tc.txt"
 
 # Orthogonalise EV 9 wrt EV 0
 set fmri(ortho9.0) 0
@@ -1015,7 +1015,7 @@ set fmri(tempfilt_yn10) 0
 set fmri(deriv_yn10) 0
 
 # Custom EV file (EV 10)
-set fmri(custom10) "EVNINE"
+set fmri(custom10) "/data/Analysis/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_Act.feat/net0009_tc.txt"
 
 # Orthogonalise EV 10 wrt EV 0
 set fmri(ortho10.0) 0
@@ -1094,7 +1094,7 @@ set fmri(tempfilt_yn11) 1
 set fmri(deriv_yn11) 0
 
 # Custom EV file (EV 11)
-set fmri(custom11) "EVWIN"
+set fmri(custom11) "/s3/hcp/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/EVs/win.txt"
 
 # Orthogonalise EV 11 wrt EV 0
 set fmri(ortho11.0) 0
@@ -1315,7 +1315,7 @@ set fmri(tempfilt_yn13) 1
 set fmri(deriv_yn13) 0
 
 # Custom EV file (EV 13)
-set fmri(custom13) "EVLOSS"
+set fmri(custom13) "/s3/hcp/100206/MNINonLinear/Results/tfMRI_GAMBLING_LR/EVs/loss.txt"
 
 # Orthogonalise EV 13 wrt EV 0
 set fmri(ortho13.0) 0
