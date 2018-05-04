@@ -29,9 +29,9 @@ for subj in `cat sublist187.txt`; do
   for run in RL LR; do
     #Manages the number of jobs and cores
     NCORES=28
-    while [ $(ps -ef | grep -v grep | grep L1_Gam_nPPI.sh | wc -l) -ge $NCORES ]; do
+    while [ $(ps -ef | grep -v grep | grep runL1Gam_nPPI_netTC | wc -l) -ge $NCORES ]; do
        sleep 1m
     done
-    bash L1_Gam_nPPI.sh $run $subj &
+    bash runL1Gam_nPPI_netTC $run $subj &
   done
 done
