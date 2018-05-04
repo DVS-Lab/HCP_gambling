@@ -4,7 +4,7 @@ NCORES=28
 
 for subj in `cat sublist175`; do
   #manages number of processes by comparing with NCORES
-  while [ $(ps -ef | grep -v grep | grep L2_Emo_Act | wc -l) -ge #$NCORES ]; do
+  while [ $(ps -ef | grep -v grep | grep L2_Emo_Act | wc -l) -ge $NCORES ]; do
     sleep 1m
   done
   bash L2_Emo_Act $subj &
