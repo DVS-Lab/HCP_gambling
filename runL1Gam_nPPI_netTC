@@ -20,12 +20,12 @@ for RSNmap in DMN ; do
   #checking L1 output
   #comment out sanity check when running full dataset
   #SANITY CHECK
-  #if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-    #echo "L1_Gam_nPPI has been run for $subj $run $RSNmap"
-    #exit
-  #else
-    #rm -rf ${OUTPUT}.feat
-  #fi
+  if [ -e ${OUTPUT}.feat/cluster_mask_zstat14.nii.gz ]; then
+    echo "L1_Gam_nPPI_netTC has been run for $subj $run $RSNmap"
+    exit
+  else
+    rm -rf ${OUTPUT}.feat
+  fi
 
   #EV files
   EVDMN=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act.feat/DMN_tc.txt

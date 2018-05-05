@@ -34,7 +34,7 @@ for NET in DMN; do
   done
 
   #find and replace
-  ITEMPLATE=${BASEDIR}/templates/L2GamPPI.fsf
+  ITEMPLATE=${BASEDIR}/templates/L2GamnPPI_netTC.fsf
   OTEMPLATE=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Gam_nPPI_netTC_${NET}.fsf
   sed -e 's@OUTPUT@'$OUTPUT'@g' \
   -e 's@INPUT01@'$INPUT01'@g' \
