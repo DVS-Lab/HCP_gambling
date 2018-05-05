@@ -10,20 +10,21 @@ subj=$1
 
 INPUT01=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_EMOTION_LR/L1_Emo_Act.feat
 INPUT02=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_EMOTION_RL/L1_Emo_Act.feat
-OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Emo_Act
+OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Emo_Act5
 
 #checking L2 output
 #remove output files if they exist to avoid +.gfeat directories; g signifies higher level
 #set number of contrasts
 #remove sanity check when running full dataset
 #SANITY CHECK
-NCOPES=2
-#if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/#cluster_mask_zstat1.nii.gz ]; then
-  #echo "L2_Gam_Act has been run for $subj"
-  #exit
-#else
-  #rm -rf ${OUTPUT}.gfeat
-#fi
+#change NCOPES to 5 tp get just clustermask5 fear>neutral
+NCOPES=5
+if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then
+  echo "L2_Emo_Act5 has been run for $subj"
+  exit
+else
+  rm -rf ${OUTPUT}.gfeat
+fi
 
 for run in LR RL; do
   rm -rf ${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_EMOTION_${run}/L1_Emo_Act.feat/reg
@@ -34,8 +35,8 @@ for run in LR RL; do
 done
 
 #find and replace
-ITEMPLATE=${BASEDIR}/templates/L2EmoAct.fsf
-OTEMPLATE=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Emo_Act.fsf
+ITEMPLATE=${BASEDIR}/templates/L2EmoAct5.fsf
+OTEMPLATE=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Emo_Act5.fsf
 sed -e 's@OUTPUT@'$OUTPUT'@g' \
 -e 's@INPUT01@'$INPUT01'@g' \
 -e 's@INPUT02@'$INPUT02'@g' \
