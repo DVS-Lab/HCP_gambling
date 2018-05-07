@@ -11,7 +11,7 @@ MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
 #replaced RSNmap with 8 mask files from PNAS
-for RSNmap in DMN ; do
+for RSNmap in ECN ; do
 
   OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_nPPI_netTC_${RSNmap}
   DATA=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_Act.feat/filtered_func_data.nii.gz
@@ -42,7 +42,7 @@ for RSNmap in DMN ; do
   EVLOSS=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/loss.txt
 
   #find and replace: run feat for smoothing
-  ITEMPLATE=${BASEDIR}/templates/L1GamnPPI_netTC.fsf
+  ITEMPLATE=${BASEDIR}/templates/L1GamnPPI_netTC2.fsf
   OTEMPLATE=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_nPPI_netTC_${RSNmap}.fsf
   sed -e 's@OUTPUT@'$OUTPUT'@g' \
   -e 's@DATA@'$DATA'@g' \
