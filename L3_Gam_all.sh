@@ -46,7 +46,8 @@ feat $OTEMPLATE
 #cd ${OUTPUT}.gfeat/cope1.feat
 
 #run randomise on orig data sans depression scores
-#get tfce output and thresholded cluster output
+#get tfce output OR
+#get cluster-thresholded output at 3.1 threshold (add -c 3.1 after -T flag)
 #add -D flag after permutation number to demean
 #randomise -i filtered_func_data.nii.gz -o randomise -d design.mat -t design.con -m mask.nii.gz -n 10000 -T -c 3.1
 
