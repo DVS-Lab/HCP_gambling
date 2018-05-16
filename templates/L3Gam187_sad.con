@@ -1,0 +1,10 @@
+/ContrastName1	group mean 
+/ContrastName2	sad_pos 
+/NumWaves	2
+/NumContrasts	2
+/PPheights		1.000000e+00	3.530000e+01
+/RequiredEffect		0.266	1.354
+
+/Matrix
+1.000000e+00 0.000000e+00 
+0.000000e+00 1.000000e+00 

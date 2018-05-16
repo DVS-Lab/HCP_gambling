@@ -28,8 +28,8 @@ fi
 #input template L3Gamtest for plain activation
 #input template L3Gamtest_sad for sad_dep
 #add _sad at the end of fsf file for nih sadness score
-ITEMPLATE=${BASEDIR}/templates/L3Gam187.fsf
-OTEMPLATE=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}.fsf
+ITEMPLATE=${BASEDIR}/templates/L3Gam187_sad.fsf
+OTEMPLATE=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}_sad.fsf
 sed -e 's@OUTPUT@'$OUTPUT'@g' \
 -e 's@TYPE@'$TYPE'@g' \
 -e 's@COPENUM@'$COPENUM'@g' \
