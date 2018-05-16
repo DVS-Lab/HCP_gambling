@@ -20,7 +20,7 @@ for RSNmap in ECN ; do
   #checking L1 output
   #comment out sanity check when running full dataset
   #SANITY CHECK
-  if [ -e ${OUTPUT}.feat/cluster_mask_zstat14.nii.gz ]; then
+  if [ -e ${OUTPUT}.feat/cluster_mask_zstat16.nii.gz ]; then
     echo "L1_Gam_nPPI_netTC has been run for $subj $run $RSNmap"
     exit
   else
@@ -42,8 +42,8 @@ for RSNmap in ECN ; do
   EVLOSS=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/loss.txt
 
   #find and replace: run feat for smoothing
-  ITEMPLATE=${BASEDIR}/templates/L1GamnPPI_netTC2.fsf
-  OTEMPLATE=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_nPPI_netTC_${RSNmap}.fsf
+  ITEMPLATE=${BASEDIR}/templates/L1Gam_netECN.fsf
+  OTEMPLATE=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/L1_Gam_net${RSNmap}.fsf
   sed -e 's@OUTPUT@'$OUTPUT'@g' \
   -e 's@DATA@'$DATA'@g' \
   -e 's@NVOLUMES@'$NVOLUMES'@g' \

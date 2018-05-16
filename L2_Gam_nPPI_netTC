@@ -9,7 +9,7 @@ cd $BASEDIR
 subj=$1
 
 #switch between DMN and ECN for nPPI_netTC_${NET}
-for NET in ECN; do
+for NET in DMN; do
   INPUT01=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_nPPI_netTC_${NET}.feat
   INPUT02=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_GAMBLING_RL/L1_Gam_nPPI_netTC_${NET}.feat
   OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Gam_nPPI_netTC_${NET}
@@ -18,7 +18,7 @@ for NET in ECN; do
   #remove output files if they exist to avoid +.gfeat directories; g signifies higher level
   #remove sanity check when running full dataset
   #SANITY CHECK
-  NCOPES=14 #check last cope since they are done sequentially
+  NCOPES=16 #check last cope since they are done sequentially
   if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then
     echo "L2_Gam_nPPI_netTC has been run for $subj $NET"
     exit
