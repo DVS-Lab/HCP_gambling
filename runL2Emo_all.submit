@@ -1,0 +1,29 @@
+#!/bin/bash
+
+NCORES=28
+
+for subj in `cat sublist175`; do
+  #manages number of processes by comparing with NCORES
+  while [ $(ps -ef | grep -v grep | grep L2_Emo_Act | wc -l) -ge $NCORES ]; do
+    sleep 1m
+  done
+  bash L2_Emo_Act $subj &
+done
+
+#for subj in `cat sublist175`; do
+  #manages number of processes by comparing with NCORES
+  #while [ $(ps -ef | grep -v grep | grep L2_Emo_PPI.sh | wc -l) -ge $NCORES ]; do
+    #sleep 1m
+  #done
+  #bash L2_Emo_PPI.sh $subj &
+#done
+
+#hyden's version included comparison with DMN and ECN (network PPI)
+#excluded for December round of analyses bc of time constraint
+#for subj in `cat sublist175`; do
+    #Manages the number of jobs and cores
+    #while [ $(ps -ef | grep -v grep | grep L2_Emo_nPPI.sh | wc -l) -ge $NCORES ]; do
+        #sleep 1m
+    #done
+    #bash L2_Emo_nPPI.sh $subj &
+#done

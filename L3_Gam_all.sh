@@ -11,7 +11,7 @@ MAINDATADIR=`pwd`/Data
 MAINOUTPUTDIR=`pwd`/Analysis/
 cd $BASEDIR
 
-#add _sd at the end of gfeat output for sad_dep
+#add _sad at the end of gfeat output for sad_dep
 OUTPUT=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}
 
 #check L3 output; avoid running analyses twice/overwriting
@@ -25,11 +25,11 @@ else
 fi
 
 #find and replace
-#input template L3Gam1 for plain activation
-#input template L3Gam for sad_dep
-#add _sd at the end of fsf file for sad_dep
-ITEMPLATE=${BASEDIR}/templates/L3Gam.fsf
-OTEMPLATE=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}.fsf
+#input template L3Gamtest for plain activation
+#input template L3Gamtest_sad for sad_dep
+#add _sad at the end of fsf file for nih sadness score
+ITEMPLATE=${BASEDIR}/templates/L3Gam187_sad.fsf
+OTEMPLATE=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}_sad.fsf
 sed -e 's@OUTPUT@'$OUTPUT'@g' \
 -e 's@TYPE@'$TYPE'@g' \
 -e 's@COPENUM@'$COPENUM'@g' \
@@ -46,7 +46,8 @@ feat $OTEMPLATE
 #cd ${OUTPUT}.gfeat/cope1.feat
 
 #run randomise on orig data sans depression scores
-#get tfce output and thresholded cluster output
+#get tfce output OR
+#get cluster-thresholded output at 3.1 threshold (add -c 3.1 after -T flag)
 #add -D flag after permutation number to demean
 #randomise -i filtered_func_data.nii.gz -o randomise -d design.mat -t design.con -m mask.nii.gz -n 10000 -T -c 3.1
 

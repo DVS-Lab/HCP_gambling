@@ -8,7 +8,7 @@ cd $BASEDIR
 ##bash L2_Gam_nPPI.sh $subj
 subj=$1
 
-for NET in ECN; do
+for NET in DMN; do
   INPUT01=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_GAMBLING_LR/L1_Gam_nPPI_${NET}.feat
   INPUT02=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_GAMBLING_RL/L1_Gam_nPPI_${NET}.feat
   OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Gam_nPPI_${NET}
@@ -18,12 +18,12 @@ for NET in ECN; do
   #remove sanity check when running full dataset
   #SANITY CHECK
   NCOPES=7 #check last cope since they are done sequentially
-  if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then
-    echo "L2_Gam_nPPI has been run for $subj $NET"
-    exit
-  else
-    rm -rf ${OUTPUT}.gfeat
-  fi
+  #if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then
+    #echo "L2_Gam_nPPI has been run for $subj $NET"
+    #exit
+  #else
+    #rm -rf ${OUTPUT}.gfeat
+  #fi
 
   for run in LR RL; do
     rm -rf ${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_GAMBLING_${run}/L1_Gam_nPPI_${NET}.feat/reg

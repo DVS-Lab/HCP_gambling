@@ -1,6 +1,10 @@
 #!/bin/bash
 
-task=GAMBLING
+#run dos2unix recursively
+#find . -type f -print0 | xargs -0 dos2unix
+
+#testing to begin running EMOTION task
+task=EMOTION
 run=$1
 subj=$2
 
@@ -56,9 +60,9 @@ mcfile=${OUTPUTDIR}/motion_6col.txt
 rawmotion=${DATADIR}/Movement_Regressors.txt
 
 #deleting any preexisting files
-rm -rf $myoutput
+#rm -rf $myoutput
 
-#run python
+#motion regressors for each subject
 python splitmotion.py $rawmotion $mcfile
 
 #running AROMA
