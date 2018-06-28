@@ -6,7 +6,7 @@ MAINDATADIR=/s3/hcp
 MAINOUTPUTDIR=`pwd`/Analysis
 cd $BASEDIR
 
-for subj in `cat sublist191.txt`; do
+for subj in `cat sublist450.txt`; do
   for run in LR RL; do
     #manage number of processes vs NCORES
     NCORES=28
