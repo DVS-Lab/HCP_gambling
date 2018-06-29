@@ -18,16 +18,17 @@ NVOLUMES=`fslnvols ${DATA}`
 #checking L1 Act output
 #comment out sanity check when running full dataset
 #SANITY CHECK
-#if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-  #echo "L1_Gam_Act has been run for $run $subj"
-  #exit
-#else
-  #rm -rf ${OUTPUT}.feat
-#fi
+if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
+  echo "L1_Gam_Act has been run for $run $subj"
+  exit
+else
+  rm -rf ${OUTPUT}.feat
+fi
 
 #EV files
-EVLOSS=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/loss.txt
-EVWIN=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/win.txt
+EVLOSS=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/loss_event.txt
+EVWIN=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/win_event.txt
+EVNEUT=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/neut_event.txt
 
 #find and replace: temporal filtering, no brain extraction; have to make input template first!
 ITEMPLATE=${BASEDIR}/templates/L1GamAct.fsf
@@ -37,6 +38,7 @@ sed -e 's@OUTPUT@'$OUTPUT'@g' \
 -e 's@NVOLUMES@'$NVOLUMES'@g' \
 -e 's@EVLOSS@'$EVLOSS'@g' \
 -e 's@EVWIN@'$EVWIN'@g' \
+-e 's@EVNEUT@'$EVNEUT'@g' \
 <$ITEMPLATE> $OTEMPLATE
 
 #runs feat on output template
