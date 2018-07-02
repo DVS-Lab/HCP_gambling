@@ -13,7 +13,7 @@ for subj in `cat sublist450.txt`; do
 done
 
 #L1_Gam_PPI $subj $run
-#for subj in `cat sublist187.txt`; do
+#for subj in `cat sublist450.txt`; do
   #for run in LR RL; do
     #manages number of processes compared to NCORES
     #NCORES=28
@@ -25,7 +25,7 @@ done
 #done
 
 #L1_Gam_nPPI $subj $run
-#for subj in `cat sublist187.txt`; do
+#for subj in `cat sublist450.txt`; do
   #for run in RL LR; do
     #Manages the number of jobs and cores
     #NCORES=28

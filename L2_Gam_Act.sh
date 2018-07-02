@@ -18,12 +18,12 @@ OUTPUT=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/L2_Gam_Act
 #remove sanity check when running full dataset
 #SANITY CHECK
 NCOPES=2
-#if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/#cluster_mask_zstat1.nii.gz ]; then
-  #echo "L2_Gam_Act has been run for $subj"
-  #exit
-#else
-  #rm -rf ${OUTPUT}.gfeat
-#fi
+if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then
+  echo "L2_Gam_Act has been run for $subj"
+  exit
+else
+  rm -rf ${OUTPUT}.gfeat
+fi
 
 for run in LR RL; do
   rm -rf ${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_GAMBLING_${run}/L1_Gam_Act.feat/reg
