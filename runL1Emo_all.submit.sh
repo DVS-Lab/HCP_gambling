@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #L1_Emo_Act $subj $run
-for subj in `cat sublist175`; do
+for subj in `cat sublist450.txt`; do
   for run in LR RL; do
     #manages number of processes compared to NCORES
     NCORES=28

@@ -7,8 +7,7 @@ COPENUM=$2
 
 BASEDIR=`pwd`
 cd ..
-MAINDATADIR=`pwd`/Data
-MAINOUTPUTDIR=`pwd`/Analysis/
+MAINOUTPUTDIR=`pwd`
 cd $BASEDIR
 
 #add _sad at the end of gfeat output for sad_dep
@@ -28,7 +27,7 @@ fi
 #input template L3Gamtest for plain activation
 #input template L3Gamtest_sad for sad_dep
 #add _sad at the end of fsf file for nih sadness score
-ITEMPLATE=${BASEDIR}/templates/L3Gam187.fsf
+ITEMPLATE=${BASEDIR}/templates/L3GamAct.fsf
 OTEMPLATE=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}.fsf
 sed -e 's@OUTPUT@'$OUTPUT'@g' \
 -e 's@TYPE@'$TYPE'@g' \

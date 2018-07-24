@@ -254,19 +254,38 @@ set fmri(regstandard_dof) 12
 set fmri(regstandard_nonlinear_yn) 0
 
 # Control nonlinear warp field resolution
-set fmri(regstandard_nonlinear_warpres) 10
+set fmri(regstandard_nonlinear_warpres) 10 
 
 # High pass filter cutoff
 set fmri(paradigm_hp) 100
 
+# Total voxels
+set fmri(totalVoxels) 158862704
+
+
 # Number of lower-level copes feeding into higher-level analysis
-set fmri(ncopeinputs) 2
+set fmri(ncopeinputs) 7
 
 # Use lower-level cope 1 for higher-level analysis
 set fmri(copeinput.1) 1
 
 # Use lower-level cope 2 for higher-level analysis
 set fmri(copeinput.2) 1
+
+# Use lower-level cope 3 for higher-level analysis
+set fmri(copeinput.3) 1
+
+# Use lower-level cope 4 for higher-level analysis
+set fmri(copeinput.4) 1
+
+# Use lower-level cope 5 for higher-level analysis
+set fmri(copeinput.5) 0
+
+# Use lower-level cope 6 for higher-level analysis
+set fmri(copeinput.6) 0
+
+# Use lower-level cope 7 for higher-level analysis
+set fmri(copeinput.7) 0
 
 # 4D AVW data or FEAT directory (1)
 set feat_files(1) "INPUT01"
@@ -321,7 +340,7 @@ set fmri(ortho1.1) 0
 set fmri(evg1.1) 1
 
 # Higher-level EV value for EV 1 and input 2
-set fmri(evg2.1) 1
+set fmri(evg2.1) 1.0
 
 # Group membership for input 1
 set fmri(groupmem.1) 1

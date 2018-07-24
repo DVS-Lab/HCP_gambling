@@ -17,16 +17,17 @@ NVOLUMES=`fslnvols ${DATA}`
 #checking L1 output
 #comment out sanity check when running full dataset
 #SANITY CHECK
-#if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-  #echo "L1_Gam_PPI has been run for $subj $run"
-  #exit
-#else
-  #rm -rf ${OUTPUT}.feat
-#fi
+if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
+  echo "L1_Gam_PPI has been run for $subj $run"
+  exit
+else
+  rm -rf ${OUTPUT}.feat
+fi
 
 #EV files
-EVLOSS=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/loss.txt
-EVWIN=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/win.txt
+EVLOSS=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/loss_event.txt
+EVWIN=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/win_event.txt
+EVNEUT=${MAINDATADIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/EVs/neut_event.txt
 
 #time course and mask for OFC as seed region
 TIMECOURSE=${MAINOUTPUTDIR}/${subj}/MNINonLinear/Results/tfMRI_${task}_${run}/OFC_tc.txt
@@ -42,7 +43,7 @@ sed -e 's@OUTPUT@'$OUTPUT'@g' \
 -e 's@NVOLUMES@'$NVOLUMES'@g' \
 -e 's@EVLOSS@'$EVLOSS'@g' \
 -e 's@EVWIN@'$EVWIN'@g' \
--e 's@TIMECOURSE@'$TIMECOURSE'@g' \
+-e 's@EVNEUT@'$EVNEUT'@g' \
 <$ITEMPLATE> $OTEMPLATE
 
 #runs feat on output template

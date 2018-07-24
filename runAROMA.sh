@@ -4,7 +4,7 @@
 #find . -type f -print0 | xargs -0 dos2unix
 
 #testing to begin running EMOTION task
-task=GAMBLING
+task=EMOTION
 run=$1
 subj=$2
 
