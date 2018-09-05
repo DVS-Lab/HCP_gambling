@@ -5,10 +5,9 @@
 TYPE=$1
 COPENUM=$2
 
-BASEDIR=`pwd`
-cd ..
-MAINOUTPUTDIR=`pwd`
-cd $BASEDIR
+basedir=`pwd`
+MAINDATADIR=/data/projects/ppi-effect-sizes/data
+MAINOUTPUTDIR=/data/projects/ppi-effect-sizes/fsl
 
 #add _sad at the end of gfeat output for sad_dep
 OUTPUT=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}
@@ -23,11 +22,13 @@ else
   rm -rf ${OUTPUT}.gfeat
 fi
 
-#find and replace
+##find and replace
+#####old notes from L3 for NIH sadness#####
 #input template L3Gamtest for plain activation
 #input template L3Gamtest_sad for sad_dep
 #add _sad at the end of fsf file for nih sadness score
-ITEMPLATE=${BASEDIR}/templates/L3GamAct.fsf
+#####old notes from L3 for NIH sadness#####
+ITEMPLATE=${basedir}/templates/L3GamAct.fsf
 OTEMPLATE=${MAINOUTPUTDIR}/L3_${TYPE}_${COPENUM}.fsf
 sed -e 's@OUTPUT@'$OUTPUT'@g' \
 -e 's@TYPE@'$TYPE'@g' \
@@ -37,14 +38,10 @@ sed -e 's@OUTPUT@'$OUTPUT'@g' \
 #runs feat on output template
 feat $OTEMPLATE
 
-# delete old stuff
-#rm -rf ${OUTPUT}.gfeat/cope1.feat/filtered_func_data.nii.gz
-#rm -rf ${OUTPUT}.gfeat/cope1.feat/var_filtered_func_data.nii.gz
-
 ##start randomise
 #cd ${OUTPUT}.gfeat/cope1.feat
 
-#run randomise on orig data sans depression scores
+##run randomise on orig data sans depression scores
 #get tfce output OR
 #get cluster-thresholded output at 3.1 threshold (add -c 3.1 after -T flag)
 #add -D flag after permutation number to demean
