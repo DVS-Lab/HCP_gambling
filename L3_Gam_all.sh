@@ -1,5 +1,5 @@
 #!/bin/bash
-delete this change
+
 ##bash L3_Gam_all.sh $TYPE $COPENUM
 #make sure not use $C since L2 has this variable and may cause errors in pipeline
 TYPE=$1
